@@ -7,7 +7,7 @@ One repo, installable as a plugin in both tools, so every machine gets the same 
 
 ```bash
 git clone https://github.com/meszmate/skills ~/skills
-~/skills/install.sh            # skills + pstack into Claude Code and Codex
+~/skills/install.sh            # skills into Claude Code and Codex
 ~/skills/install.sh --server   # also the dev-server cleanup timer (Linux)
 ```
 
@@ -19,7 +19,15 @@ Or by hand:
 | install | `/plugin install meszmate@meszmate-skills` | `codex plugin add meszmate@meszmate-skills` |
 | update | `/plugin marketplace update` | re-run `install.sh` |
 
-`install.sh` also installs [pstack](https://github.com/michael-denyer/pstack-claude) (Lauren Tan's engineering-workflow skills). Start with `/poteto-mode`, or `/poteto-help` to find the right command.
+## pstack, built in
+
+All of [pstack](https://github.com/michael-denyer/pstack-claude)'s skills and agents are included directly in this plugin (Lauren Tan's engineering workflows: `poteto-mode`, `architect`, `arena`, `swarm`, `interrogate`, `how`, `why`, `tdd`, the `principle-*` skills, review and debugging skills). Start with `/poteto-mode`, or `/poteto-help` to find the right command. Its agents are called `meszmate:poteto-agent`, `meszmate:comment-sicko`, etc.
+
+Not included: pstack's SessionStart hook (which auto-routes every task to `poteto-mode`). The skills are used when relevant or when you call them.
+
+Update from upstream: `scripts/sync-pstack.sh` applies only what changed since the last sync (`plugins/meszmate/PSTACK_UPSTREAM`), so your edits stay; conflicts land in `*.rej` files. Then bump the version and push.
+
+Credit: pstack by Lauren Tan (MIT), Claude Code port by Michael Denyer. Licenses in `plugins/meszmate/third-party/pstack/` and `skills/poteto-mode/references/licenses/`.
 
 ## Skills
 
@@ -30,6 +38,7 @@ Or by hand:
 | `docker-hygiene` | Labelling, limiting and cleaning up containers, so agents don't leak databases |
 | `server-health` | Disk / RAM / CPU / pressure report and what is safe to delete |
 | `cliproxy-admin` | Managing the CLIProxyAPI proxy: accounts, priorities, plugins, logs |
+| + 65 pstack skills | see above |
 
 ## Layout
 
@@ -40,6 +49,9 @@ plugins/meszmate/
   .claude-plugin/plugin.json
   .codex-plugin/plugin.json
   skills/<name>/SKILL.md          one folder per skill, optional scripts/
+  agents/                         subagents used by the pstack skills
+  PSTACK_UPSTREAM                 last synced pstack commit
+scripts/sync-pstack.sh            pull pstack updates
 server/                           cleanup-builds script + systemd timer
 install.sh
 ```

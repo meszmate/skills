@@ -1,7 +1,7 @@
 {
   "name": "meszmate",
-  "version": "0.1.0",
-  "description": "Preview URLs over Tailscale, Rust build and Docker hygiene, server health checks and CLIProxyAPI administration.",
+  "version": "0.2.0",
+  "description": "My skills plus pstack's engineering workflows (poteto-mode, architect, swarm, review, debugging) and dev-server skills: preview URLs, Rust/Docker hygiene, server health, CLIProxyAPI.",
   "author": {
     "name": "Matthew Meszaros",
     "url": "https://github.com/meszmate"
