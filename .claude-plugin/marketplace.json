@@ -1,0 +1,16 @@
+{
+  "name": "meszmate-skills",
+  "owner": {
+    "name": "Matthew Meszaros",
+    "url": "https://github.com/meszmate"
+  },
+  "description": "Personal skills for my AI dev server, agents and proxy.",
+  "plugins": [
+    {
+      "name": "meszmate",
+      "source": "./plugins/meszmate",
+      "description": "Preview URLs over Tailscale, Rust build and Docker hygiene, server health checks and CLIProxyAPI administration.",
+      "version": "0.1.0"
+    }
+  ]
+}

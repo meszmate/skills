@@ -1,0 +1,8 @@
+[Unit]
+Description=Remove build output from idle agent worktrees
+
+[Service]
+Type=oneshot
+Nice=10
+IOSchedulingClass=idle
+ExecStart=%h/.local/bin/cleanup-builds.sh

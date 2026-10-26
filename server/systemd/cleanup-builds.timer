@@ -1,0 +1,9 @@
+[Unit]
+Description=Clean idle agent worktree builds every 3 hours
+
+[Timer]
+OnCalendar=*-*-* 00/3:17:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

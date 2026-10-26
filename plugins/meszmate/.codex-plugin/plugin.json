@@ -1,0 +1,18 @@
+{
+  "name": "meszmate",
+  "version": "0.1.0",
+  "description": "Preview URLs over Tailscale, Rust build and Docker hygiene, server health checks and CLIProxyAPI administration.",
+  "author": {
+    "name": "Matthew Meszaros",
+    "url": "https://github.com/meszmate"
+  },
+  "repository": "https://github.com/meszmate/skills",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "meszmate",
+    "shortDescription": "Dev server, agent hygiene and proxy skills",
+    "developerName": "Matthew Meszaros",
+    "category": "Developer Tools"
+  }
+}

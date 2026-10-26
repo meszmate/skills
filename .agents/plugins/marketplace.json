@@ -1,0 +1,21 @@
+{
+  "name": "meszmate-skills",
+  "interface": {
+    "displayName": "meszmate skills"
+  },
+  "plugins": [
+    {
+      "name": "meszmate",
+      "source": {
+        "source": "local",
+        "path": "./plugins/meszmate"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL",
+        "products": ["CODEX"]
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

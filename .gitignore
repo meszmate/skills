@@ -1,0 +1,7 @@
+.DS_Store
+*.log
+*.bak*
+.env*
+*.pem
+*.key
+auth*.json
