@@ -34,6 +34,8 @@ docker volume rm $(docker volume ls -q --filter label=agent.worktree="$wt") 2>/d
 
 Leave a container running only if the user is still using it, and say so in your final message.
 
+A timer (`~/.local/bin/docker-idle-stop.sh`, every 30 min) also **stops** containers with no real CPU or network activity for 3 hours. Stopped containers keep their data: if you need one again, `docker start <name>` instead of creating a new one. To protect a long-lived container, add its name to `~/.config/docker-idle-stop/keep` or start it with `--label keep=true`.
+
 ## Never
 
 - `docker system prune -a`, `docker volume prune`, or `docker rm -f $(docker ps -aq)`: these delete other agents' and the user's data.

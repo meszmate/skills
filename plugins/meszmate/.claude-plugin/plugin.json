@@ -1,6 +1,6 @@
 {
   "name": "meszmate",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "My skills plus pstack's engineering workflows (poteto-mode, architect, swarm, review, debugging) and dev-server skills: preview URLs, Rust/Docker hygiene, server health, CLIProxyAPI.",
   "author": {
     "name": "Matthew Meszaros",

@@ -1,0 +1,7 @@
+[Unit]
+Description=Stop Docker containers that have been idle for hours
+
+[Service]
+Type=oneshot
+Nice=10
+ExecStart=%h/.local/bin/docker-idle-stop.sh
