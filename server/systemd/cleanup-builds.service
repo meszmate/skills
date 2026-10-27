@@ -5,4 +5,4 @@ Description=Remove build output from idle agent worktrees
 Type=oneshot
 Nice=10
 IOSchedulingClass=idle
-ExecStart=%h/.local/bin/cleanup-builds.sh
+ExecStart=/usr/bin/sg docker -c "%h/.local/bin/cleanup-builds.sh"
